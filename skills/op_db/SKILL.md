@@ -68,10 +68,6 @@ SELECT COUNT(*) FROM table_name WHERE condition;
 - **v3_openapi**：查询连接器/API配置，使用 [op_db_openapi](../op_db_openapi/SKILL.md)
 - **v3_metadata**：查询事件/按钮/元数据配置，使用 [op_db_metadata](../op_db_metadata/SKILL.md)
 
-### 其他业务库（使用场景较少）
-
-使用场景较少的业务库查询模板，请参考 [temp.md](temp.md)。
-
 ## 注意事项
 
 1. 参数替换：所有模板中的`{参数名}`都需要替换为实际值

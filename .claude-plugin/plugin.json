@@ -1,0 +1,9 @@
+{
+  "name": "op-plugin",
+  "description": "Operational Platform plugin with agents and skills for workflow, connectors, events, and database operations",
+  "version": "1.0.0",
+  "author": {
+    "name": "Your Team"
+  }
+}
+
