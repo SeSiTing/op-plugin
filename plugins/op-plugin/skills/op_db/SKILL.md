@@ -67,6 +67,7 @@ SELECT COUNT(*) FROM table_name WHERE condition;
 - **v3_user**：查询组织/租户信息，使用 [op_db_user](../op_db_user/SKILL.md)
 - **v3_openapi**：查询连接器/API配置，使用 [op_db_openapi](../op_db_openapi/SKILL.md)
 - **v3_metadata**：查询事件/按钮/元数据配置，使用 [op_db_metadata](../op_db_metadata/SKILL.md)
+- **v3_e-report**：查询数据分析告警配置，使用 [op_db_e_report](../op_db_e_report/SKILL.md)
 
 ## 注意事项
 

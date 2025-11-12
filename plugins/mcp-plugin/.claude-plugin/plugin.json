@@ -6,10 +6,6 @@
     "name": "Your Team"
   },
   "mcpServers": {
-    "op-latest": {
-      "type": "http",
-      "url": "http://10.83.20.125:8018/mcp"
-    },
     "op": {
       "type": "http",
       "url": "https://op-mcp-test.blacklake.tech/mcp"

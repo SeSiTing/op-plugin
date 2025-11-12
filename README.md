@@ -115,6 +115,22 @@ claude --debug
 # 使用 /agents 命令查看可用 agents
 ```
 
+### 删除配置
+
+```bash
+# 删除市场（不会删除已安装的插件）
+/plugin marketplace remove SeSiTing/siti-claude-marketplace
+
+# 删除插件（需单独删除）
+/plugin uninstall op-plugin@siti-claude-marketplace
+/plugin uninstall coder-plugin@siti-claude-marketplace
+
+# 删除 MCP
+/mcp remove <mcp-name>
+```
+
+**注意**：删除市场不会自动删除已安装的插件，需要单独执行删除插件命令。
+
 ## 插件说明
 
 ### coder-plugin

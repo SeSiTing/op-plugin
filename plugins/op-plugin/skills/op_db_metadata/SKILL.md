@@ -1,6 +1,6 @@
 ---
 name: op_db_metadata
-description: 提供v3_metadata数据库的SQL查询模板，包括对象编码（object_code）、对象名称、事件、按钮配置、自定义字段、元数据字段等表的查询。查询对象编码、对象名称、自定义对象时使用。使用 exec_sql 工具执行查询。
+description: 提供v3_metadata数据库的SQL查询模板，包括对象编码（object_code）、对象名称、事件、按钮配置、自定义字段、元数据字段、插件中心等表的查询。查询对象编码、对象名称、自定义对象时使用。使用 exec_sql 工具执行查询。
 ---
 
 # v3_metadata 数据库查询
@@ -80,6 +80,40 @@ description: 提供v3_metadata数据库的SQL查询模板，包括对象编码�
 **字段**：
 - `object_code` - 对象编码
 - `field_id` - 字段ID（关联 meta_field_config.id）
+
+**关联关系**：
+- `custom_field.object_code` = `standard_business_object.object_code`
+- `custom_field.field_id` = `meta_field_config.id`
+
+**查询示例**：
+```sql
+-- 按对象编码查询自定义字段
+SELECT * FROM v3_metadata.custom_field WHERE object_code = '{object_code}' AND deleted_at = 0;
+
+-- 按租户ID和对象编码查询自定义字段（关联对象表验证）
+SELECT cf.* FROM v3_metadata.custom_field cf
+INNER JOIN v3_metadata.standard_business_object sbo ON cf.object_code = sbo.object_code
+WHERE sbo.org_id = {org_id} AND cf.object_code = '{object_code}' AND cf.deleted_at = 0 AND sbo.deleted_at = 0;
+```
+
+### plugin_center
+
+**用途**：查询插件中心配置信息，包括流程插件等。用于统计插件中心的租户数和流程个数。
+
+**字段**：
+- `id` - 插件ID
+- `org_id` - 租户ID（工厂id）
+- `code` - 按钮编号
+- `name` - 按钮名称
+- `type` - 插件类型（1=流程插件）
+- `status` - 状态（表示是否发布）
+- `wf_id` - 流程ID（用于统计流程个数）
+
+**查询示例**：
+```sql
+-- 按租户查询插件中心配置
+SELECT * FROM v3_metadata.plugin_center WHERE org_id = {org_id} AND deleted_at = 0;
+```
 
 ## 注意事项
 
