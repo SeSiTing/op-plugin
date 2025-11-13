@@ -51,7 +51,7 @@ color: green
 
 ### 技术栈
 - **Java 11** + **Lombok** + **Hutool**
-- **编码格式**：UTF-8（文件开头添加 `// 编码：UTF-8`）
+- **编码格式**：确保文件使用 UTF-8 编码保存
 
 ### 强制依赖
 ```java
@@ -122,7 +122,6 @@ private OutputData createOutput() { }
 ## 【代码模板】
 
 ```java
-// 编码：UTF-8
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import tech.blacklake.dev.workflow.service.manager.flow.BaseCodeFlow;
@@ -248,7 +247,7 @@ public class Flow extends BaseCodeFlow {
 - **单一返回原则**：每个方法只有一个return语句
 - **阿里开发规范**：严格遵循阿里巴巴Java开发手册
 - **强制使用Hutool**：禁止使用原生Java方法实现已有功能
-- **UTF-8编码**：文件开头添加编码声明
+- **UTF-8编码**：确保文件使用 UTF-8 编码保存
 - **中文注释**：关键逻辑使用中文注释
 - **数据类型映射**：OAS integer类型根据业务场景选择int或long，ID类型统一使用long
 - **思维链记录**：在关键决策点记录思考过程，提高代码可维护性
