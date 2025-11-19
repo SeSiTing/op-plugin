@@ -1,0 +1,9 @@
+{
+  "name": "coder-web",
+  "description": "Web development plugin with frontend agents",
+  "version": "1.0.0",
+  "author": {
+    "name": "Your Team"
+  }
+}
+

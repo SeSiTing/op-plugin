@@ -4,9 +4,11 @@ Claude Code 插件市场项目，提供代码开发和 OP 平台相关的插件�
 
 ## 项目简介
 
-`siti-claude-marketplace` 是一个 Claude Code 插件市场，包含两个核心插件：
+`siti-claude-marketplace` 是一个 Claude Code 插件市场，包含多个核心插件：
 
-- **coder-plugin**：代码开发插件（designer、developer、frontend agents）
+- **coder-flow**：流程开发插件（designer、developer agents）
+- **coder-web**：Web 开发插件（frontend-html、frontend-react agents）
+- **coder-explore**：探索插件（包含视频分析 skill）
 - **op-plugin**：OP 平台插件（工作流、连接器、事件和数据库相关的 agents 和 skills）
 
 ## 项目结构
@@ -16,7 +18,9 @@ siti-claude-marketplace/
 ├── .claude-plugin/
 │   └── marketplace.json          # 市场文件
 └── plugins/
-    ├── coder-plugin/              # 代码开发插件
+    ├── coder-flow/                # 流程开发插件
+    ├── coder-web/                 # Web 开发插件
+    ├── coder-explore/             # 探索插件
     └── op-plugin/                 # OP 平台插件
 ```
 
@@ -32,7 +36,9 @@ siti-claude-marketplace/
 
 # 安装插件
 /plugin install op-plugin@siti-claude-marketplace
-/plugin install coder-plugin@siti-claude-marketplace
+/plugin install coder-flow@siti-claude-marketplace
+/plugin install coder-web@siti-claude-marketplace
+/plugin install coder-explore@siti-claude-marketplace
 
 # 或交互式浏览并安装
 /plugin
@@ -49,11 +55,11 @@ siti-claude-marketplace/
 直接从 GitHub 存储库安装插件：
 
 ```bash
-# 直接从 GitHub 安装 op-plugin
+# 直接从 GitHub 安装插件
 /plugin install op-plugin@github:SeSiTing/siti-claude-marketplace
-
-# 直接从 GitHub 安装 coder-plugin
-/plugin install coder-plugin@github:SeSiTing/siti-claude-marketplace
+/plugin install coder-flow@github:SeSiTing/siti-claude-marketplace
+/plugin install coder-web@github:SeSiTing/siti-claude-marketplace
+/plugin install coder-explore@github:SeSiTing/siti-claude-marketplace
 ```
 
 ### 方式三：项目内自动识别
@@ -88,12 +94,32 @@ options = ClaudeAgentOptions(
     ]
 )
 
-# 只加载 coder-plugin
+# 只加载 coder-flow（流程开发）
 options = ClaudeAgentOptions(
     plugins=[
         {
             "type": "local",
-            "path": "./plugins/siti-claude-marketplace/plugins/coder-plugin"
+            "path": "./plugins/siti-claude-marketplace/plugins/coder-flow"
+        }
+    ]
+)
+
+# 只加载 coder-web（Web 开发）
+options = ClaudeAgentOptions(
+    plugins=[
+        {
+            "type": "local",
+            "path": "./plugins/siti-claude-marketplace/plugins/coder-web"
+        }
+    ]
+)
+
+# 只加载 coder-explore（探索）
+options = ClaudeAgentOptions(
+    plugins=[
+        {
+            "type": "local",
+            "path": "./plugins/siti-claude-marketplace/plugins/coder-explore"
         }
     ]
 )
@@ -123,7 +149,9 @@ claude --debug
 
 # 删除插件（需单独删除）
 /plugin uninstall op-plugin@siti-claude-marketplace
-/plugin uninstall coder-plugin@siti-claude-marketplace
+/plugin uninstall coder-flow@siti-claude-marketplace
+/plugin uninstall coder-web@siti-claude-marketplace
+/plugin uninstall coder-explore@siti-claude-marketplace
 
 # 删除 MCP
 /mcp remove <mcp-name>
@@ -133,12 +161,22 @@ claude --debug
 
 ## 插件说明
 
-### coder-plugin
+### coder-flow
 
-代码开发插件，包含：
+流程开发插件，包含：
 - `designer` - 系统集成方案设计专家
 - `developer` - 资深Java开发工程师
-- `frontend` - 前端页面生成专家
+
+### coder-web
+
+Web 开发插件，包含：
+- `frontend-html` - 通用Web页面生成专家
+- `frontend-react` - 专业React应用开发专家
+
+### coder-explore
+
+探索插件，包含：
+- `video_analysis` - 视频处理和分析 skill（使用 ffmpeg 切片图片后分析）
 
 ### op-plugin
 

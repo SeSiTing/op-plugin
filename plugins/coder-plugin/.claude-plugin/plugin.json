@@ -1,9 +1,0 @@
-{
-  "name": "coder-plugin",
-  "description": "Code development plugin with designer, developer, and frontend agents for Claude Code",
-  "version": "1.0.2",
-  "author": {
-    "name": "Your Team"
-  }
-}
-
