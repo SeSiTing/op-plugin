@@ -1,7 +1,7 @@
 {
-  "name": "coder-explore",
-  "description": "Exploration plugin for general purpose with video analysis skill",
-  "version": "1.0.0",
+  "name": "video-analyst-plugin",
+  "description": "Video analysis plugin with frame analysis capabilities",
+  "version": "1.0.3",
   "author": {
     "name": "Your Team"
   }
