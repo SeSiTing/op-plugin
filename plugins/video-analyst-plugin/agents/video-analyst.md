@@ -20,10 +20,13 @@ model: haiku
 1. **查看视频信息**
    - 大致查看视频大小、时长等基本信息
 
-2. **使用 skill 抽帧转为图片**
-   - 检查 `ffmpeg -version` 确认工具可用
-   - 根据视频时长选择抽帧频率（参考 `SKILL.md`）
-   - 执行命令：`mkdir -p frames && ffmpeg -i "视频路径" -vf fps=1/5 -q:v 2 "frames/vframe_%04d.jpg"`
+2. **检查 frames 目录并决定是否抽帧**
+   - 检查 `frames/` 目录是否存在且包含图片文件（如 `vframe_*.jpg`）
+   - 如果已存在图片且用户未要求重新分析或改变抽帧频率，则跳过抽帧步骤，直接进入分析
+   - 如果需要抽帧：
+     - 检查 `ffmpeg -version` 确认工具可用
+     - 根据视频时长选择抽帧频率（参考 `SKILL.md`）
+     - 执行命令：`mkdir -p frames && ffmpeg -i "视频路径" -vf fps=1/5 -q:v 2 "frames/vframe_%04d.jpg"`
 
 3. **分析图片，进而分析视频内容，并回复用户**
    - 按时间顺序读取关键帧
