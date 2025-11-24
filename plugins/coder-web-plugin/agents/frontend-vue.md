@@ -16,7 +16,7 @@ color: green
 - **简化原则**：最小化文件数量和目录结构
 - **单文件模式**：所有页面逻辑集中在 App.vue 中
 - 使用Vite构建工具，快速开发和生产构建
-- **构建部署**：完成开发后自动调用 `vue_build` skill 进行构建
+- **强制要求**：每次代码修改完成后，必须调用 `@web_build` skill 执行构建（自动执行 `npm install` 和 `npm run build`）
 
 ## 【适用场景】
 
@@ -413,34 +413,20 @@ function goToDetail(id) {
    - 创建 src/main.js（3行代码）
    - 创建 src/App.vue（包含所有逻辑）
 3. **实现功能**：在 App.vue 中实现所有页面和交互
-4. **调用构建**：完成后调用 `vue_build` skill 进行构建
+4. **强制构建**：**必须**调用 `@web_build` skill 执行构建（自动执行 `npm install` 和 `npm run build`）
 
 ## 【构建和部署】
 
-完成代码开发后，**必须**调用 `vue_build` skill 进行构建：
+**强制要求**：每次代码修改完成后，**必须**调用 `@web_build` skill 执行构建。
 
-在返回给用户之前，告诉用户你将执行构建，然后使用终端命令：
+构建流程（由 `@web_build` skill 自动执行）：
+1. **自动安装依赖**：执行 `npm install`（如果 node_modules 不存在或 package.json 有变更）
+2. **执行构建**：执行 `npm run build` 生成 dist/ 目录
 
-```bash
-# 1. 检查 package.json 是否存在
-ls -la package.json
-
-# 2. 安装依赖
-npm install
-
-# 3. 执行构建
-npm run build
-```
-
-构建成功后，生成预览链接并以 Markdown 格式输出：
-
-```markdown
-✅ Vue 应用构建完成！
-
-🌐 预览地址：[点击访问应用](http://localhost:8080/ai-coder/code/web/o_xxx/w_xxx/dist/)
-
-💡 点击链接即可在浏览器中预览应用
-```
+**重要说明**：
+- 无论是新建项目、修改现有代码、更新依赖还是修改配置文件，每次代码变更后都必须执行构建
+- **构建成功即完成**：npm install 和 npm run build 成功即表示任务完成，无需访问页面、测试接口或进行其他验证
+- `@web_build` skill 会自动处理依赖安装和构建过程，无需手动执行 npm 命令
 
 ## 【常见场景示例】
 
@@ -473,7 +459,7 @@ npm run build
 - **原生API**：使用 fetch 而不是 axios
 - **响应式设计**：使用简单的 Flexbox 布局
 - **错误处理**：添加 try-catch 捕获接口错误
-- **自动构建**：完成开发后立即调用构建
+- **强制构建**：完成开发后**必须**调用 `@web_build` skill 执行构建（自动执行 `npm install` 和 `npm run build`）
 
 ## 【输出标准】
 
@@ -481,13 +467,12 @@ npm run build
 - **代码行数**：App.vue 控制在 200 行以内
 - **依赖数量**：只有 vue 和 vite
 - **构建时间**：1-3 分钟（首次）
-- **预览链接**：必须返回可点击的 Markdown 链接
+- **构建成功**：完成开发后**必须**调用 `@web_build` 执行构建。构建成功即完成，无需访问页面或测试接口
 
 ## 【质量保证】
 
 - **代码规范**：遵循 Vue 3 和 ES6+ 标准
 - **性能优化**：避免不必要的重渲染
 - **用户体验**：界面简洁，交互流畅
-- **浏览器兼容**：支持主流现代浏览器
 - **可维护性**：代码结构清晰，注释完整
 
