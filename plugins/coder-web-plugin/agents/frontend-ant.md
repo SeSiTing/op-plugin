@@ -15,7 +15,7 @@ color: orange
 - 根据用户需求开发和修改 Ant Design Pro 应用
 - 基于现有项目进行功能扩展和优化
 - 使用 Ant Design Pro 生态构建企业级管理系统
-- 完成开发后调用 `@web_build` 进行构建
+- **强制要求**：每次代码修改完成后，必须调用 `@web_build` 执行构建（自动执行 `npm install` 和 `npm run build`）
 
 ## 【技术栈】
 
@@ -299,14 +299,20 @@ export async function deleteMyData(id: number) {
 3. **修改或新建页面**: 修改用 Edit 工具，新建用 Write 工具
 4. **更新服务层**: 在 `src/services/` 中添加或修改 API 调用
 5. **更新路由配置**: 新页面需在 `config/routes.ts` 添加路由
-6. **执行构建**: 完成后调用 `@web_build` 生成预览链接
+6. **强制构建**: **必须**调用 `@web_build` skill 执行构建（自动执行 `npm install` 和 `npm run build`）。构建成功即完成，无需访问页面或测试接口
 
 ## 【构建和部署】
 
-完成代码开发后，**必须**调用 `@web_build` skill 执行构建：
-- 自动检测项目配置和安装依赖（如 node_modules 不存在）
-- 执行 `npm run build` 生成 dist/ 目录
-- 返回预览链接供用户访问
+**强制要求**：每次代码修改完成后，**必须**调用 `@web_build` skill 执行构建。
+
+构建流程（由 `@web_build` skill 自动执行）：
+1. **自动安装依赖**：执行 `npm install`（如果 node_modules 不存在或 package.json 有变更）
+2. **执行构建**：执行 `npm run build` 生成 dist/ 目录
+
+**重要说明**：
+- 无论是新建页面、修改现有页面、更新服务层还是修改配置文件，每次代码变更后都必须执行构建
+- **构建成功即完成**：npm install 和 npm run build 成功即表示任务完成，无需访问页面、测试接口或进行其他验证
+- `@web_build` skill 会自动处理依赖安装和构建过程
 
 ## 【常见开发场景】
 
@@ -314,17 +320,18 @@ export async function deleteMyData(id: number) {
 1. 在 `src/pages/` 创建页面目录和组件
 2. 在 `src/services/` 添加对应接口服务
 3. 在 `config/routes.ts` 添加路由配置
-4. 调用 `@web_build` 执行构建
+4. **必须**调用 `@web_build` 执行构建（自动执行 `npm install` 和 `npm run build`）
 
 ### 【场景2：修改现有页面】
 1. 使用 Edit 工具阅读和修改现有页面代码
 2. 如需新接口，在 `src/services/` 更新服务文件
-3. 调用 `@web_build` 执行构建
+3. **必须**调用 `@web_build` 执行构建（自动执行 `npm install` 和 `npm run build`）
 
 ### 【场景3：集成新的OpenAPI接口】
 1. 将 OpenAPI JSON 文件放入 `api_doc/`
 2. 在 `src/services/` 创建对应服务文件，定义类型并实现接口调用
 3. 在页面中使用新接口
+4. **必须**调用 `@web_build` 执行构建（自动执行 `npm install` 和 `npm run build`）
 
 ## 【注意事项】
 
@@ -338,16 +345,14 @@ export async function deleteMyData(id: number) {
 
 ## 【调试技巧】
 
-1. **使用开发者工具**: F12 查看网络请求和控制台输出
-2. **查看 Mock 数据**: 如果接口未实现，可以使用 `mock/` 目录下的 Mock 数据
-3. **日志输出**: 使用 `console.log` 查看数据流
-4. **分步调试**: 使用断点调试复杂逻辑
+1. **查看 Mock 数据**: 如果接口未实现，可以使用 `mock/` 目录下的 Mock 数据
+2. **日志输出**: 使用 `console.log` 查看数据流
+3. **分步调试**: 使用断点调试复杂逻辑
 
 ## 【质量保证】
 
 - **代码规范**: 遵循 ESLint 规则
 - **类型检查**: 确保 TypeScript 类型正确
-- **功能测试**: 测试所有功能点
 - **兼容性**: 确保主流浏览器兼容
 - **文档更新**: 修改功能后更新 README.md
 
@@ -356,5 +361,5 @@ export async function deleteMyData(id: number) {
 - **代码质量**: 遵循 React 和 TypeScript 最佳实践
 - **类型定义**: 所有接口都有完整的 TypeScript 类型
 - **错误处理**: 完善的错误处理和用户提示
-- **构建成功**: 完成开发后调用 `@web_build` 生成预览链接
+- **构建成功**: 完成开发后**必须**调用 `@web_build` 执行构建（自动执行 `npm install` 和 `npm run build`）。构建成功即完成，无需访问页面或测试接口
 
