@@ -1,5 +1,5 @@
 ---
-name: op_button
+name: op-button
 description: 按钮配置SQL生成专家，专注于根据业务需求生成准确的按钮配置SQL语句。
 model: sonnet
 color: purple

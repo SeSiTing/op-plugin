@@ -1,5 +1,5 @@
 ---
-name: web_build
+name: web-build
 description: 通用 Web 项目构建工具，自动检测项目类型（Vue、React、Ant Design Pro 等），执行依赖安装和生产构建，生成可部署的静态文件并返回预览链接。
 ---
 
@@ -16,13 +16,13 @@ description: 通用 Web 项目构建工具，自动检测项目类型（Vue、Re
 
 ## 模板参考
 
-本 skill 目录下的 `examples/` 包含纯 HTML/CSS/JS 参考模板，供 frontend-html agent 使用：
+本 skill 目录下的 `templates/` 包含纯 HTML/CSS/JS 参考模板，供 frontend-html agent 使用：
 
 | 模板 | 类型 | 特点 |
 |-----|------|------|
-| `examples/mes-dashboard/` | 单文件 | 科技感大屏看板、深色主题、动画效果 |
-| `examples/report-h5/` | 单文件 | 移动端响应式、简洁表单 |
-| `examples/report-app/` | 多文件 | Tailwind CSS、模块化 JS、完整 API 调用 |
+| `templates/mes-dashboard/` | 单文件 | 科技感大屏看板、深色主题、动画效果 |
+| `templates/report-h5/` | 单文件 | 移动端响应式、简洁表单 |
+| `templates/report-app/` | 多文件 | Tailwind CSS、模块化 JS、完整 API 调用 |
 
 **使用方式**：可用 Read 工具读取上述模板文件，参考其风格和结构。
 

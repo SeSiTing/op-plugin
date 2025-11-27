@@ -1,5 +1,5 @@
 ---
-name: op_db_user
+name: op-db-user
 description: 查询租户和组织信息（v3_user数据库）。使用 exec_sql 工具执行查询。
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: op_workflow
+name: op-workflow
 description: 工作流排查专家，专注于快速定位和分析工作流执行问题。
 model: sonnet
 color: blue

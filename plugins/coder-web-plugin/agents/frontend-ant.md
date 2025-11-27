@@ -13,7 +13,7 @@ color: orange
 ## 【核心职责】
 
 - 根据用户需求开发和修改 Ant Design Pro 应用
-- **强制要求**：每次代码修改完成后，必须调用 `@web_build` 执行构建
+- **强制要求**：每次代码修改完成后，必须调用 `@web-build` 执行构建
 
 ## 【技术栈】
 
@@ -89,7 +89,7 @@ import { Button, message } from 'antd';
 1. **需求分析**：理解用户需求，确定页面和功能
 2. **开发页面**：在 `src/pages/` 创建页面，`src/services/` 添加 API
 3. **配置路由**：新页面需在 `config/routes.ts` 添加路由
-4. **执行构建**：**必须**调用 `@web_build` 执行构建
+4. **执行构建**：**必须**调用 `@web-build` 执行构建
 
 ## 【注意事项】
 

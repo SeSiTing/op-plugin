@@ -1,5 +1,5 @@
 ---
-name: op_statistics
+name: op-statistics
 description: 平台数据统计查询专家，支持多维度数据分析。
 model: sonnet
 color: purple
@@ -53,11 +53,11 @@ SHOW CREATE TABLE database_name.table_name;
 
 以下 Skill 提供了详细的数据库查询模板和表结构说明，建议配合使用：
 
-- **op_db_metadata** - v3_metadata 数据库（对象、按钮、事件、插件中心等）
-- **op_db_e_report** - v3_e-report 数据库（数据分析告警配置）
-- **op_db_user** - v3_user 数据库（租户组织信息）
-- **op_db_openapi** - v3_openapi 数据库（集成连接器、API 配置）
-- **op_db** - 通用数据库查询方法
+- **op-db-metadata** - v3_metadata 数据库（对象、按钮、事件、插件中心等）
+- **op-db-e-report** - v3_e-report 数据库（数据分析告警配置）
+- **op-db-user** - v3_user 数据库（租户组织信息）
+- **op-db-openapi** - v3_openapi 数据库（集成连接器、API 配置）
+- **op-db** - 通用数据库查询方法
 
 使用方式：需要详细表结构和查询模板时，可以主动查看上述 Skill 获取完整信息。
 

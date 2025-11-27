@@ -1,5 +1,5 @@
 ---
-name: op_db_metadata
+name: op-db-metadata
 description: 提供v3_metadata数据库的SQL查询模板，包括对象编码（object_code）、对象名称、事件、按钮配置、自定义字段、元数据字段、插件中心等表的查询。查询对象编码、对象名称、自定义对象时使用。使用 exec_sql 工具执行查询。
 ---
 

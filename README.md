@@ -173,16 +173,11 @@ Web 开发插件，包含：
 - `frontend-html` - 通用Web页面生成专家
 - `frontend-react` - 专业React应用开发专家
 
-### coder-explore
-
-探索插件，包含：
-- `video_analysis` - 视频处理和分析 skill（使用 ffmpeg 切片图片后分析）
-
 ### op-plugin
 
 OP 平台插件，包含：
-- **Agents**：`op_button`、`op_connector`、`op_event`、`op_workflow`
-- **Skills**：`op_db`、`op_db_metadata`、`op_db_openapi`、`op_db_user`
+- **Agents**：`op-button`、`op-connector`、`op-event`、`op-workflow`、`op-statistics`
+- **Skills**：`op-db`、`op-db-metadata`、`op-db-openapi`、`op-db-user`、`op-db-e-report`
 
 ## 版本管理
 

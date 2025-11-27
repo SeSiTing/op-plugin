@@ -1,5 +1,5 @@
 ---
-name: op_connector
+name: op-connector
 description: 接口连接器配置SQL生成专家，专注于根据接口信息生成准确的连接器配置SQL语句。
 model: sonnet
 color: green

@@ -1,9 +1,0 @@
-{
-  "name": "video-analyst-plugin",
-  "description": "Video analysis plugin with frame analysis capabilities",
-  "version": "1.0.3",
-  "author": {
-    "name": "Your Team"
-  }
-}
-

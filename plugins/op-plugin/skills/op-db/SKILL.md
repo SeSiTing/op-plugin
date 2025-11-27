@@ -1,5 +1,5 @@
 ---
-name: op_db
+name: op-db
 description: 提供通用的SQL查询方法和数据库查询基础。使用 exec_sql 工具执行查询。
 ---
 
@@ -67,10 +67,10 @@ SELECT COUNT(*) FROM table_name WHERE condition;
 
 ### 常用数据库（有专用 Skill）
 
-- **v3_user**：查询组织/租户信息，使用 [op_db_user](../op_db_user/SKILL.md)
-- **v3_openapi**：查询连接器/API配置，使用 [op_db_openapi](../op_db_openapi/SKILL.md)
-- **v3_metadata**：查询事件/按钮/元数据配置，使用 [op_db_metadata](../op_db_metadata/SKILL.md)
-- **v3_e-report**：查询数据分析告警配置，使用 [op_db_e_report](../op_db_e_report/SKILL.md)
+- **v3_user**：查询组织/租户信息，使用 [op-db-user](../op-db-user/SKILL.md)
+- **v3_openapi**：查询连接器/API配置，使用 [op-db-openapi](../op-db-openapi/SKILL.md)
+- **v3_metadata**：查询事件/按钮/元数据配置，使用 [op-db-metadata](../op-db-metadata/SKILL.md)
+- **v3_e-report**：查询数据分析告警配置，使用 [op-db-e-report](../op-db-e-report/SKILL.md)
 
 ## 注意事项
 

@@ -1,5 +1,5 @@
 ---
-name: op_event
+name: op-event
 description: 业务事件配置专家，专注于根据业务需求生成准确的事件配置JSON。
 model: sonnet
 color: orange

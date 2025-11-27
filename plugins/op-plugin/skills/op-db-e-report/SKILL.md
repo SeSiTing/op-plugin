@@ -1,5 +1,5 @@
 ---
-name: op_db_e_report
+name: op-db-e-report
 description: 提供v3_e-report数据库的SQL查询模板，包括数据分析告警配置等表的查询。查询分析告警配置时使用。使用 exec_sql 工具执行查询。
 ---
 

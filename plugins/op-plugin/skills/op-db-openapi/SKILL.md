@@ -1,5 +1,5 @@
 ---
-name: op_db_openapi
+name: op-db-openapi
 description: 查询集成连接器和API配置（v3_openapi数据库）。使用 exec_sql 工具执行查询。
 ---
 
